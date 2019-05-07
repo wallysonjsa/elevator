@@ -14,6 +14,12 @@ namespace elevator
             //Lista do tipo da classe passageiro
             List<passageiro> passageiro = new List<passageiro>();
 
+            //Lista que armazena solicitações para SUBIR
+            List<passageiro> lstSubir = new List<passageiro>();
+
+            //Lista que armazena solicitações para DESCER
+            List<passageiro> lstDescer = new List<passageiro>();
+
             //Inicializa negativo para validação ser efetiva
             int qtdPassageiro = -1;
 
@@ -133,11 +139,40 @@ namespace elevator
 
                 //Adiciona os atributos do passageiro na lista
                 passageiro.Add(p1);
+
+            }
+
+            //Prepara Solicitações
+            for (int x=0; x<passageiro.Count; x++)
+            {
+                if(passageiro[x].AndarOrigem > passageiro[x].AndarDestino && passageiro[x].AndarOrigem > e1.AndarCorrente)
+                {
+                    lstDescer.Add(passageiro[x]);
+                }
+
+                if (passageiro[x].AndarOrigem < passageiro[x].AndarDestino && passageiro[x].AndarOrigem < e1.AndarCorrente)
+                {
+                    lstSubir.Add(passageiro[x]);
+                }
+
+                if (passageiro[x].AndarOrigem > passageiro[x].AndarDestino && passageiro[x].AndarOrigem < e1.AndarCorrente)
+                {
+                    lstDescer.Add(passageiro[x]);
+                    lstSubir.Add(passageiro[x]);
+                }
+
+                if (passageiro[x].AndarOrigem < passageiro[x].AndarDestino && passageiro[x].AndarOrigem > e1.AndarCorrente)
+                {
+                    lstSubir.Add(passageiro[x]);
+                    lstDescer.Add(passageiro[x]);
+                }
+
+                //lstDescer.Sort();
+                //lstSubir.Sort();
             }
 
             Console.WriteLine("Fim.");
             Console.Read();
         }
-
     }
 }

@@ -1,0 +1,6 @@
+C:\Users\wallyson.j.araujo\source\repos\elevator\elevator\bin\Debug\elevator.exe
+C:\Users\wallyson.j.araujo\source\repos\elevator\elevator\bin\Debug\elevator.pdb
+C:\Users\wallyson.j.araujo\source\repos\elevator\elevator\obj\Debug\elevator.csprojAssemblyReference.cache
+C:\Users\wallyson.j.araujo\source\repos\elevator\elevator\obj\Debug\elevator.csproj.CoreCompileInputs.cache
+C:\Users\wallyson.j.araujo\source\repos\elevator\elevator\obj\Debug\elevator.exe
+C:\Users\wallyson.j.araujo\source\repos\elevator\elevator\obj\Debug\elevator.pdb

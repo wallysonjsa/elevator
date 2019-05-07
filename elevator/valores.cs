@@ -5,6 +5,10 @@ using System.Text;
 
 namespace elevator
 {
+    /// <summary>
+    /// Classe que possui valores que será reutilizado no código 
+    /// visando reduzir consumo de memória com alocamento alocando literais
+    /// </summary>
     class Valores
     {
         public string apenasNumeros = "Informe apenas números positivos.";
@@ -18,6 +22,5 @@ namespace elevator
         public string ultimoAndar = " (ÚLTIMO ANDAR)";
         public string terreo = " (0=TERRÉO até ";
         public string fimTexto = ": ";
-        public int maxInt = int.MaxValue;
     }
 }

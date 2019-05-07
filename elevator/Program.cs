@@ -10,7 +10,11 @@ namespace elevator
             Valores vars = new Valores();
             elevador e1 = new elevador();
             passageiro p1 = new passageiro();
+
+            //Lista do tipo da classe passageiro
             List<passageiro> passageiro = new List<passageiro>();
+
+            //Inicializa negativo para validação ser efetiva
             int qtdPassageiro = -1;
 
             //Enquando o não for um valor positivo, continuar solicitando ao usuário
@@ -20,10 +24,12 @@ namespace elevator
             {
                 Console.WriteLine(vars.informeQtd + " de ANDARES do predio" + vars.fimTexto);
 
+                //Tratamento de exceção para não aceitar letras usando variável boleana ex1
                 try {
                     e1.UltimoAndar = int.Parse(Console.ReadLine());
                 }catch{ ex1 = true; }
 
+                //Não aceitar valor negativo ou letras
                 if (e1.UltimoAndar <= 0 || ex1)
                 {
                     Console.WriteLine(vars.andaresPredio + int.MaxValue);
@@ -40,13 +46,14 @@ namespace elevator
             {
                 Console.WriteLine(vars.andarAtual + " que o elevador está parado" + rangeAndares + vars.fimTexto);
 
+                //Tratamento de exceção para não aceitar letras usando variável boleana ex1
                 try
                 {
                     e1.AndarCorrente = int.Parse(Console.ReadLine());
                 }
                 catch{ ex1 = true; }
-                
 
+                //Não aceitar valor negativo, andar corrente maior que o último andar ou letras
                 if (e1.AndarCorrente < 0 || e1.AndarCorrente > e1.UltimoAndar || ex1)
                 {
                     Console.WriteLine(vars.informeAndarvalido + e1.UltimoAndar + vars.ultimoAndar);
@@ -60,13 +67,14 @@ namespace elevator
             {
                 Console.WriteLine(vars.informeQtd + " de passageiros" + vars.fimTexto);
 
+                //Tratamento de exceção para não aceitar letras usando variável boleana ex1
                 try
                 {
                     qtdPassageiro = int.Parse(Console.ReadLine());
                 }
                 catch { ex1 = true; }
-                
 
+                //Não aceitar valor negativo ou letras
                 if (qtdPassageiro<= 0 || ex1)
                 {
                     Console.WriteLine(vars.andaresPredio + int.MaxValue);
@@ -87,14 +95,15 @@ namespace elevator
                 while (p1.AndarOrigem < 0 || p1.AndarOrigem > e1.UltimoAndar || ex1) {
                     Console.WriteLine(vars.informeAndar + " ATUAL do " + vars.passageiro + " " + idP + rangeAndares + vars.fimTexto);
 
+                    //Tratamento de exceção para não aceitar letras usando variável boleana ex1
                     try
                     {
                         p1.AndarOrigem = int.Parse(Console.ReadLine());
                     }
                     catch { ex1 = true; }
-                    
 
-                    if(p1.AndarOrigem < 0 || p1.AndarOrigem > e1.UltimoAndar || ex1)
+                    //Não aceitar valor negativo, andar origem maior que o último andar ou letras
+                    if (p1.AndarOrigem < 0 || p1.AndarOrigem > e1.UltimoAndar || ex1)
                     {
                         Console.WriteLine(vars.informeAndarvalido + e1.UltimoAndar + vars.ultimoAndar);
                         ex1 = false;
@@ -107,13 +116,14 @@ namespace elevator
                 {
                     Console.WriteLine(vars.informeAndar + " de DESTINO do " + vars.passageiro + " " + idP + rangeAndares + " (exceto " + p1.AndarOrigem + ")" + vars.fimTexto);
 
+                    //Tratamento de exceção para não aceitar letras usando variável boleana ex1
                     try
                     {
                         p1.AndarDestino = int.Parse(Console.ReadLine());
                     }
                     catch { ex1 = true; }
 
-
+                    //Não aceitar valor negativo, andar corrente maior que o último andar, andar origem igual ao andar destino ou letras
                     if (p1.AndarDestino < 0 || p1.AndarDestino > e1.UltimoAndar || p1.AndarOrigem == p1.AndarDestino || ex1)
                     {
                         Console.WriteLine(vars.informeAndarvalido + e1.UltimoAndar + vars.ultimoAndar + " (exceto " + p1.AndarOrigem + ")");

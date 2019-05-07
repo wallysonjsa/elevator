@@ -2,6 +2,9 @@
 
 namespace elevator
 {
+    /// <summary>
+    /// Classe que possui atributos encapsulados da entidade elevador
+    /// </summary>
     class elevador
     {
         private int idElevador;
@@ -22,7 +25,10 @@ namespace elevator
 
         public elevador()
         {
+            //Custo do movimento por andar para SUBIR ou DESCER 
             tempoMovimento = 2;
+
+            //Inicializa negativo para validação ser efetiva
             andarDestino = int.MaxValue*-1;
             andarCorrente = int.MaxValue*-1;
             ultimoAndar = int.MaxValue*-1;

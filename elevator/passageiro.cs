@@ -5,20 +5,24 @@ using System.Text;
 
 namespace elevator
 {
+    /// <summary>
+    /// Classe que possui atributos encapsulados da entidade passageiro
+    /// </summary>
     class passageiro
     {
-        int idPassageiro;
-        int andarOrigem;
-        int andarDestino;
-
-        public passageiro()
-        {
-            andarDestino = int.MaxValue*-1;
-            andarOrigem = int.MaxValue*-1;
-        }
+        private int idPassageiro;
+        private int andarOrigem;
+        private int andarDestino;
 
         public int AndarOrigem { get => andarOrigem; set => andarOrigem = value; }
         public int AndarDestino { get => andarDestino; set => andarDestino = value; }
         public int IdPassageiro { get => idPassageiro; set => idPassageiro = value; }
+
+        public passageiro()
+        {
+            //Inicializa negativo para validação ser efetiva
+            andarDestino = int.MaxValue * -1;
+            andarOrigem = int.MaxValue * -1;
+        }
     }
 }

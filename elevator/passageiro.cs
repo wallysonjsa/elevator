@@ -13,6 +13,8 @@ namespace elevator
 
         public passageiro()
         {
+            andarDestino = int.MaxValue*-1;
+            andarOrigem = int.MaxValue*-1;
         }
 
         public int AndarOrigem { get => andarOrigem; set => andarOrigem = value; }

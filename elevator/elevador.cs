@@ -23,6 +23,9 @@ namespace elevator
         public elevador()
         {
             tempoMovimento = 2;
+            andarDestino = int.MaxValue*-1;
+            andarCorrente = int.MaxValue*-1;
+            ultimoAndar = int.MaxValue*-1;
         }
 
     }

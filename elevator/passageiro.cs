@@ -24,5 +24,12 @@ namespace elevator
             andarDestino = int.MaxValue * -1;
             andarOrigem = int.MaxValue * -1;
         }
+
+        public passageiro(int _idPassageiro, int _andarOrigem, int _andarDestino)
+        {
+            this.idPassageiro = _idPassageiro;
+            this.andarOrigem = _andarOrigem;
+            this.andarDestino = _andarDestino;
+        }
     }
 }

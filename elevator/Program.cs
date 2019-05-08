@@ -9,16 +9,11 @@ namespace elevator
         {
             Valores vars = new Valores();
             elevador e1 = new elevador();
-            passageiro p1 = new passageiro();
 
             //Lista do tipo da classe passageiro
             List<passageiro> passageiro = new List<passageiro>();
 
-            //Lista que armazena solicitações para SUBIR
-            List<passageiro> lstSubir = new List<passageiro>();
 
-            //Lista que armazena solicitações para DESCER
-            List<passageiro> lstDescer = new List<passageiro>();
 
             //Inicializa negativo para validação ser efetiva
             int qtdPassageiro = -1;
@@ -91,6 +86,8 @@ namespace elevator
             //Loop para solicitar X vezes de passageiros for informado pelo usuário
             for (int x = 0; x < qtdPassageiro; x++)
             {
+                passageiro p1 = new passageiro();
+
                 int idP = x + 1;
                 p1.IdPassageiro = idP;
                 p1.AndarDestino = int.MaxValue*-1;
@@ -141,6 +138,12 @@ namespace elevator
                 passageiro.Add(p1);
 
             }
+
+            //Lista que armazena solicitações para SUBIR
+            List<passageiro> lstSubir = new List<passageiro>();
+
+            //Lista que armazena solicitações para DESCER
+            List<passageiro> lstDescer = new List<passageiro>();
 
             //Prepara Solicitações
             for (int x=0; x<passageiro.Count; x++)
